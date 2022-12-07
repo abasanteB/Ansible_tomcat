@@ -33,12 +33,12 @@
     recurse: yes
     state: directory
 
-- name: Copy Tomcat service file
-  copy:
-    src: /tmp/playbooks/files/tomcat.service
-    dest: /etc/systemd/system/
-    owner: tomcat
-    group: tomcat
-    mode: 0755
+##- name: Copy Tomcat service file
+  #copy:
+   # src: /tmp/playbooks/files/tomcat.service
+    #dest: /etc/systemd/system/
+    #owner: tomcat
+    #group: tomcat
+    #mode: 0755
 
 ...
