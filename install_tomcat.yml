@@ -2,10 +2,11 @@
 
 - name: Install tomcat
   hosts: localhost
+  become: true
 
   pre_tasks:
 
-    - name: install wget 
+    - name: install wget
       yum: 
         name: wget
         state: present
@@ -18,6 +19,6 @@
 
   roles:
     - role: java
-    - rola: tomcat
+    - role: tomcat
 
 ...
