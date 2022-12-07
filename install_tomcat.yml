@@ -3,6 +3,19 @@
 - name: Install tomcat
   hosts: localhost
 
+  pre_tasks:
+
+    - name: install wget 
+      yum: 
+        name: wget
+        state: present
+
+    - name: install unzip
+      yum: 
+        name: unzip
+        state: present
+
+
   roles:
     - role: java
     - rola: tomcat
