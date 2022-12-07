@@ -40,10 +40,16 @@
    owner: tomcat
    group: tomcat
    mode: 0755
-  notify: restar tomcat
+ 
+- name: Start and enable Tomcat 9 on server
+  systemd:
+    name: tomcat
+    state: started
+    daemon_reload: yes
+    enabled: yes
 
 - name: Open tomcat port on the firewall
-  firewalld:
+  ansible.posix.firewalld:
     port: "{{ tcp_port }}/tcp"
     permanent: true
     state: enabled
