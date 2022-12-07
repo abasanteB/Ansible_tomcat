@@ -33,12 +33,20 @@
     recurse: yes
     state: directory
 
-##- name: Copy Tomcat service file
-  #copy:
-   # src: /tmp/playbooks/files/tomcat.service
-    #dest: /etc/systemd/system/
-    #owner: tomcat
-    #group: tomcat
-    #mode: 0755
+- name: Copy Tomcat service file
+  template:		
+   src: tomcat.service.j2
+   dest: /etc/systemd/system/tomcat.service
+   owner: tomcat
+   group: tomcat
+   mode: 0755
+  notify: restar tomcat
 
+- name: Open tomcat port on the firewall
+  firewalld:
+    port: "{{ tcp_port }}/tcp"
+    permanent: true
+    state: enabled
+    immediate: yes
+   
 ...
