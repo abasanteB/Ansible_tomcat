@@ -25,9 +25,7 @@
       firewalld:
         permanent: yes
         immediate: yes
-        enabled: yes
-        state: started
-...
+        state: enabled
 
   roles:
     
