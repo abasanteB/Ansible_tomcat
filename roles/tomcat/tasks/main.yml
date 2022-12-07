@@ -1,7 +1,5 @@
 ---
 
-- ansible.builtin.import_tasks: install_java.yml
-  vars:
-    - java_package: "{{ java_package }}"
+
 
 ...

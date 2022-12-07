@@ -4,6 +4,7 @@
   hosts: localhost
 
   roles:
-    - role: tomcat
+    - role: java
+    - rola: tomcat
 
 ...

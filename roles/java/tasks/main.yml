@@ -1,5 +1,10 @@
+---
  - name: "Installing Java"
+   become: true
    yum:
     name: "{{ java_package }}"
     state: present
 
+
+
+...
