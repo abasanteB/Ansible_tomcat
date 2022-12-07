@@ -16,17 +16,17 @@
         name: unzip
         state: present
 
-    - name: install y enable firewalld
+    - name: install and enable firewalld
       dnf:
         name: firewalld
         state: present
 
-    - name: enable firewalld
-      firewalld:
-        permanent: yes
-        immediate: yes
-        state: enabled
-
+    - name: start firewalld
+      service:
+       name: firewalld
+       state: started
+       enabled: yes
+      
   roles:
     
     - role: java
